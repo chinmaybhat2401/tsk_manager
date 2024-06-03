@@ -1,11 +1,17 @@
 #include <stdio.h>
+#include <string.h>
 
 #define MAX_TASKS 100
 
-char descriptions[MAX_TASKS][100];
-int priorities[MAX_TASKS];
-int statuses[MAX_TASKS];
-int numTasks = 0;
+struct Task 
+{
+    char descriptions[MAX_TASKS][100];
+    int priorities[MAX_TASKS];
+    int statuses[MAX_TASKS];
+    int numTasks = 0;
+
+};
+
 
 void displayMenu();
 void addTask();
@@ -66,7 +72,7 @@ void addTask()
     scanf(" %s", descriptions[numTasks]);
     printf("Enter priority (1-5): ");
     scanf("%d", &priorities[numTasks]);
-    statuses[numTasks] = 0; // Set status as incomplete
+    statuses[numTasks] = 0; 
     numTasks++;
     printf("Task added successfully!\n");
 }
